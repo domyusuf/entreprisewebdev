@@ -13,6 +13,9 @@ CREATE TABLE IF NOT EXISTS Users (
   account_type ENUM('personal','business','savings','checking') NOT NULL DEFAULT 'personal',
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+
+  -- Constraints
+  CHECK (LENGTH(name) > 0),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Transactions table
@@ -55,6 +58,9 @@ CREATE TABLE IF NOT EXISTS Transaction_Categories (
   description TEXT,
   is_active BOOLEAN NOT NULL DEFAULT TRUE,
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+  -- Constraints
+  CHECK (LENGTH(name) > 0),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Transaction <-> Category assignment (many-to-many)
