@@ -1,0 +1,67 @@
+{
+  "id": 201,
+  "external_transaction_id": "ext-987654321",
+  "type": "transfer",
+  "body": "Payment for September invoice #123",
+  "amount": "50.00",
+  "sender_id": 42,
+  "receiver_id": 43,
+  "service_center": "service-center-1",
+  "date_sent": "2025-09-18T20:10:30Z",
+  "balance_after": "1200.75",
+  "created_at": "2025-09-18T20:10:35Z",
+
+  "sender": {
+    "id": 42,
+    "name": "Jane Doe",
+    "phone_number": "+250788123456",
+    "account_balance": "1250.75",
+    "account_type": "personal",
+    "created_at": "2025-01-01T09:00:00Z",
+    "updated_at": "2025-09-18T19:50:00Z"
+  },
+
+  "receiver": {
+    "id": 43,
+    "name": "Acme Corp",
+    "phone_number": "+250788654321",
+    "account_balance": "5000.00",
+    "account_type": "business",
+    "created_at": "2024-11-02T08:30:00Z",
+    "updated_at": "2025-09-18T19:45:00Z"
+  },
+
+  "categories": [
+    {
+      "id": 3,
+      "name": "Bills",
+      "description": "Utility and recurring bill payments",
+      "is_active": true,
+      "created_at": "2025-01-05T12:00:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Office Supplies",
+      "description": "Stationery and small equipment",
+      "is_active": true,
+      "created_at": "2025-03-20T15:00:00Z"
+    }
+  ],
+
+  "system_logs": [
+    {
+      "id": 101,
+      "transaction_id": 201,
+      "level": "info",
+      "message": "Transaction queued",
+      "created_at": "2025-09-18T20:10:31Z"
+    },
+    {
+      "id": 102,
+      "transaction_id": 201,
+      "level": "info",
+      "message": "Transaction processed by service-center-1",
+      "created_at": "2025-09-18T20:10:35Z"
+    }
+  ]
+}

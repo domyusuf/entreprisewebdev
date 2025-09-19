@@ -22,4 +22,15 @@
 
 ## 🖼️ System Architecture
 
-![System Architecture](./assets/system-architecture.png)
+![System Architecture](./docs/system-architecture.png)
+
+## 🖼️ Entity Relationship Diagram
+
+![Entity Relationship Diagram](./docs/erd_diagram.png)
+**Entity Separation Strategy**: The separation of Users, Transactions, and Transaction_Categories follows proper normalization principles, eliminating data redundancy while maintaining referential integrity. This design supports scalability as new transaction types can be added without modifying existing transaction records.
+
+**Direct Relationship Model**:  The current design uses direct foreign keys (send_id, receiver_id) in the Transactions table, which is efficient for simple sender-receiver relationships and provides good query performance for most common use cases.
+
+**Comprehensive Logging**: Including System_Logs with transaction_id foreign key enables detailed audit trails and troubleshooting capabilities, essential for financial data processing systems.
+
+**Data Type Selections**: Using DECIMAL for monetary values (amount, account_balance, balance_after) prevents floating-point precision errors critical in financial applications. DATETIME fields support proper temporal queries and reporting.
